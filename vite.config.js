@@ -7,13 +7,17 @@ export default defineConfig({
   build: {
     outDir: "dist",
     assetsDir: "assets",
-    sourcemap: true,
+    sourcemap: false, // Disable sourcemap for production
     minify: true,
     rollupOptions: {
+      input: {
+        main: "./index.html",
+      },
       output: {
-        manualChunks: {
-          vendor: ["@fortawesome/fontawesome-svg-core"],
-        },
+        // Remove manual chunks that might cause issues
+        entryFileNames: "assets/[name]-[hash].js",
+        chunkFileNames: "assets/[name]-[hash].js",
+        assetFileNames: "assets/[name]-[hash].[ext]",
       },
     },
   },
@@ -25,5 +29,6 @@ export default defineConfig({
   preview: {
     port: 4173,
     open: true,
+    host: true,
   },
 });
