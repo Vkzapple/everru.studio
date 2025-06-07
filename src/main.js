@@ -1,9 +1,5 @@
 import "./style.css";
-import { library, dom } from "@fortawesome/fontawesome-svg-core";
-import { faCoffee } from "@fortawesome/free-solid-svg-icons";
-
-library.add(faCoffee);
-dom.watch();
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
 document.querySelector("#app").innerHTML = `
   <div>
