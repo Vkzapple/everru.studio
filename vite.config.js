@@ -12,7 +12,7 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: {
-          vendor: ["fontawesome"],
+          vendor: ["@fortawesome/fontawesome-svg-core"],
         },
       },
     },
