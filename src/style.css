@@ -142,8 +142,3 @@ body {
       transparent 50%
     );
 }
-/* Memastikan icon <i> tampil */
-i {
-  font-style: normal;
-  display: inline-block;
-}
