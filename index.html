@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/assets/logo.jpg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Everru.Studio - Layanan Jasa Digital Evelly</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+
+  <body class="scroll-smooth">
+    <!-- Navbar -->
+    <nav class="fixed top-0 w-full z-50 glass-effect">
+      <div class="max-w-7xl mx-auto px-6 py-4">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center space-x-3">
+            <div
+              class="w-10 h-10 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full flex items-center justify-center"
+            >
+              <i class="fas fa-code text-white"></i>
+            </div>
+            <span class="text-xl font-bold text-white">Everru.Studio</span>
+          </div>
+          <div class="hidden md:flex space-x-8">
+            <a
+              href="#home"
+              class="text-white hover:text-indigo-300 transition-colors"
+              >Home</a
+            >
+            <a
+              href="#layanan"
+              class="text-white hover:text-indigo-300 transition-colors"
+              >Layanan</a
+            >
+            <a
+              href="#portofolio"
+              class="text-white hover:text-indigo-300 transition-colors"
+              >Portofolio</a
+            >
+            <a
+              href="#testimoni"
+              class="text-white hover:text-indigo-300 transition-colors"
+              >Testimoni</a
+            >
+            <a
+              href="#kontak"
+              class="text-white hover:text-indigo-300 transition-colors"
+              >Kontak</a
+            >
+          </div>
+          <button class="md:hidden text-white">
+            <i class="fas fa-bars text-xl"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+      id="home"
+      class="min-h-screen flex items-center justify-center relative overflow-hidden bg-mesh"
+    >
+      <div
+        class="absolute inset-0 bg-gradient-to-br from-indigo-600/20 via-purple-600/20 to-pink-600/20"
+      ></div>
+      <div class="relative z-10 text-center px-6 max-w-5xl mx-auto">
+        <div class="floating-animation">
+          <h1
+            class="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight"
+          >
+            <span class="block">💻 Butuh Website,</span>
+            <span class="block">Desain atau Dokumen?</span>
+          </h1>
+        </div>
+        <p class="text-xl text-gray-200 mb-4 max-w-3xl mx-auto">
+          Everru.Studio hadir untuk Bantu Kebutuhan Digitalmu dengan Cepat &
+          Profesional!
+        </p>
+        <p class="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
+          Dari pembuatan website, desain UI/UX, hingga pendaftaran SPMB – semua
+          bisa diserahkan ke kami!
+        </p>
+        <a
+          href="https://wa.me/6288212175461"
+          class="inline-flex items-center gap-3 bg-white text-indigo-600 font-bold px-8 py-4 rounded-full hover:bg-gray-100 transition-all duration-300 hover:scale-105 neon-glow"
+        >
+          <i class="fab fa-whatsapp text-green-500"></i>
+          🎯 Konsultasi Sekarang
+        </a>
+      </div>
+
+      <!-- Floating Elements -->
+      <div
+        class="absolute top-20 left-20 w-20 h-20 bg-blue-400/20 rounded-full blur-xl animate-pulse"
+      ></div>
+      <div
+        class="absolute bottom-32 right-20 w-32 h-32 bg-purple-400/20 rounded-full blur-xl animate-pulse"
+      ></div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="layanan" class="py-20 bg-gradient-to-b from-gray-50 to-white">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold gradient-text mb-4">🛠️ Layanan Kami</h2>
+          <p class="text-gray-600 text-lg">
+            Solusi digital terlengkap untuk kebutuhan bisnis Anda
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div
+            class="card-hover bg-white p-8 rounded-2xl shadow-lg border border-gray-100"
+          >
+            <div class="text-center mb-6">
+              <i class="fas fa-laptop-code service-icon"></i>
+            </div>
+            <h3 class="font-bold text-xl mb-4 text-gray-800">
+              Software Development
+            </h3>
+            <ul class="space-y-2 text-gray-600">
+              <li class="flex items-start gap-2">
+                <i class="fas fa-check text-green-500 mt-1 text-sm"></i>
+                <span>Website e-commerce untuk UMKM</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fas fa-check text-green-500 mt-1 text-sm"></i>
+                <span>Website company profile</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fas fa-check text-green-500 mt-1 text-sm"></i>
+                <span>WordPress atau PHP custom</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fas fa-check text-green-500 mt-1 text-sm"></i>
+                <span>Website dengan/tanpa payment gateway</span>
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="card-hover bg-white p-8 rounded-2xl shadow-lg border border-gray-100"
+          >
+            <div class="text-center mb-6">
+              <i class="fas fa-palette service-icon"></i>
+            </div>
+            <h3 class="font-bold text-xl mb-4 text-gray-800">
+              Desain UI/UX & Grafis
+            </h3>
+            <ul class="space-y-2 text-gray-600">
+              <li class="flex items-start gap-2">
+                <i class="fas fa-check text-green-500 mt-1 text-sm"></i>
+                <span>Desain UI/UX (web & mobile)</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fas fa-check text-green-500 mt-1 text-sm"></i>
+                <span>Desain dokumen (surat, proposal, CV)</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fas fa-check text-green-500 mt-1 text-sm"></i>
+                <span>Desain promosi/branding</span>
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="card-hover bg-white p-8 rounded-2xl shadow-lg border border-gray-100"
+          >
+            <div class="text-center mb-6">
+              <i class="fas fa-chart-bar service-icon"></i>
+            </div>
+            <h3 class="font-bold text-xl mb-4 text-gray-800">
+              Data & Dokumen Digital
+            </h3>
+            <ul class="space-y-2 text-gray-600">
+              <li class="flex items-start gap-2">
+                <i class="fas fa-check text-green-500 mt-1 text-sm"></i>
+                <span>Tabel Excel untuk laporan/bisnis</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fas fa-check text-green-500 mt-1 text-sm"></i>
+                <span>Pembuatan & pengaturan dokumen Word</span>
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="card-hover bg-white p-8 rounded-2xl shadow-lg border border-gray-100"
+          >
+            <div class="text-center mb-6">
+              <i class="fas fa-graduation-cap service-icon"></i>
+            </div>
+            <h3 class="font-bold text-xl mb-4 text-gray-800">
+              Layanan Musiman (SPMB)
+            </h3>
+            <ul class="space-y-2 text-gray-600">
+              <li class="flex items-start gap-2">
+                <i class="fas fa-check text-green-500 mt-1 text-sm"></i>
+                <span>Pembuatan akun SPMB</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fas fa-check text-green-500 mt-1 text-sm"></i>
+                <span>Pembuatan SPTJM</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fas fa-check text-green-500 mt-1 text-sm"></i>
+                <span>Pendaftaran sekolah</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portofolio" class="py-20 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold gradient-text mb-4">💼 Portofolio</h2>
+          <p class="text-gray-600 text-lg">
+            Hasil karya terbaik dari berbagai project yang telah kami kerjakan
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div
+            class="card-hover bg-white rounded-2xl overflow-hidden shadow-lg"
+          >
+            <div
+              class="h-48 bg-gradient-to-br from-blue-400 to-purple-500 flex items-center justify-center"
+            >
+              <i class="fas fa-globe text-white text-4xl"></i>
+            </div>
+            <div class="p-6">
+              <h3 class="font-bold text-lg mb-2">E-commerce UMKM</h3>
+              <p class="text-gray-600 text-sm">
+                Website toko online dengan fitur lengkap dan payment gateway
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="card-hover bg-white rounded-2xl overflow-hidden shadow-lg"
+          >
+            <div
+              class="h-48 bg-gradient-to-br from-green-400 to-blue-500 flex items-center justify-center"
+            >
+              <i class="fas fa-mobile-alt text-white text-4xl"></i>
+            </div>
+            <div class="p-6">
+              <h3 class="font-bold text-lg mb-2">Mobile UI Design</h3>
+              <p class="text-gray-600 text-sm">
+                Desain aplikasi mobile yang user-friendly dan modern
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="card-hover bg-white rounded-2xl overflow-hidden shadow-lg"
+          >
+            <div
+              class="h-48 bg-gradient-to-br from-purple-400 to-pink-500 flex items-center justify-center"
+            >
+              <i class="fas fa-file-alt text-white text-4xl"></i>
+            </div>
+            <div class="p-6">
+              <h3 class="font-bold text-lg mb-2">Corporate Documents</h3>
+              <p class="text-gray-600 text-sm">
+                Dokumen bisnis profesional dengan desain yang elegan
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimoni" class="py-20 bg-white overflow-hidden">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold gradient-text mb-4">💬 Testimoni</h2>
+          <p class="text-gray-600 text-lg">
+            Apa kata klien tentang layanan kami
+          </p>
+        </div>
+
+        <div class="relative">
+          <div class="testimonial-slider">
+            <!-- Testimonial 1 -->
+            <div class="testimonial-card">
+              <div class="flex items-center mb-4">
+                <div
+                  class="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center mr-4"
+                >
+                  <span class="text-white font-bold">AS</span>
+                </div>
+                <div>
+                  <h4 class="font-bold text-gray-800">Andi Setiawan</h4>
+                  <p class="text-gray-500 text-sm">Owner UMKM Berkah</p>
+                </div>
+              </div>
+              <div class="flex mb-3">
+                <i class="fas fa-star stars"></i>
+                <i class="fas fa-star stars"></i>
+                <i class="fas fa-star stars"></i>
+                <i class="fas fa-star stars"></i>
+                <i class="fas fa-star stars"></i>
+              </div>
+              <p class="text-gray-600 text-sm leading-relaxed">
+                "Everru.Studio bantuin aku bikin website UMKM-ku, cepet banget
+                dan hasilnya keren! Sekarang penjualan online naik 300%. Highly
+                recommended!"
+              </p>
+              <div
+                class="flex items-center justify-between mt-4 pt-4 border-t border-gray-100"
+              >
+                <span class="text-xs text-gray-400">2 minggu lalu</span>
+                <i class="fab fa-google text-blue-500"></i>
+              </div>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div class="testimonial-card">
+              <div class="flex items-center mb-4">
+                <div
+                  class="w-12 h-12 bg-gradient-to-r from-pink-500 to-orange-500 rounded-full flex items-center justify-center mr-4"
+                >
+                  <span class="text-white font-bold">SR</span>
+                </div>
+                <div>
+                  <h4 class="font-bold text-gray-800">Sari Rahayu</h4>
+                  <p class="text-gray-500 text-sm">Fresh Graduate</p>
+                </div>
+              </div>
+              <div class="flex mb-3">
+                <i class="fas fa-star stars"></i>
+                <i class="fas fa-star stars"></i>
+                <i class="fas fa-star stars"></i>
+                <i class="fas fa-star stars"></i>
+                <i class="fas fa-star stars"></i>
+              </div>
+              <p class="text-gray-600 text-sm leading-relaxed">
+                "Desain dokumen CV-nya estetik dan rapi, cocok buat apply kerja.
+                Langsung diterima di 3 perusahaan setelah pakai CV dari sini!"
+              </p>
+              <div
+                class="flex items-center justify-between mt-4 pt-4 border-t border-gray-100"
+              >
+                <span class="text-xs text-gray-400">1 bulan lalu</span>
+                <i class="fab fa-google text-blue-500"></i>
+              </div>
+            </div>
+
+            <!-- Testimonial 3 -->
+            <div class="testimonial-card">
+              <div class="flex items-center mb-4">
+                <div
+                  class="w-12 h-12 bg-gradient-to-r from-green-500 to-teal-500 rounded-full flex items-center justify-center mr-4"
+                >
+                  <span class="text-white font-bold">BP</span>
+                </div>
+                <div>
+                  <h4 class="font-bold text-gray-800">Budi Prakoso</h4>
+                  <p class="text-gray-500 text-sm">Siswa SMA</p>
+                </div>
+              </div>
+              <div class="flex mb-3">
+                <i class="fas fa-star stars"></i>
+                <i class="fas fa-star stars"></i>
+                <i class="fas fa-star stars"></i>
+                <i class="fas fa-star stars"></i>
+                <i class="fas fa-star stars"></i>
+              </div>
+              <p class="text-gray-600 text-sm leading-relaxed">
+                "Bantu daftar SPMB lancar banget, tinggal terima beres.
+                Profesional! Sekarang udah diterima di universitas impian."
+              </p>
+              <div
+                class="flex items-center justify-between mt-4 pt-4 border-t border-gray-100"
+              >
+                <span class="text-xs text-gray-400">3 minggu lalu</span>
+                <i class="fab fa-google text-blue-500"></i>
+              </div>
+            </div>
+
+            <!-- Testimonial 4 -->
+            <div class="testimonial-card">
+              <div class="flex items-center mb-4">
+                <div
+                  class="w-12 h-12 bg-gradient-to-r from-yellow-500 to-red-500 rounded-full flex items-center justify-center mr-4"
+                >
+                  <span class="text-white font-bold">LM</span>
+                </div>
+                <div>
+                  <h4 class="font-bold text-gray-800">Lisa Maharani</h4>
+                  <p class="text-gray-500 text-sm">Startup Founder</p>
+                </div>
+              </div>
+              <div class="flex mb-3">
+                <i class="fas fa-star stars"></i>
+                <i class="fas fa-star stars"></i>
+                <i class="fas fa-star stars"></i>
+                <i class="fas fa-star stars"></i>
+                <i class="fas fa-star stars"></i>
+              </div>
+              <p class="text-gray-600 text-sm leading-relaxed">
+                "UI/UX design untuk aplikasi startup kami sangat memuaskan. Tim
+                yang responsive dan hasil yang beyond expectation!"
+              </p>
+              <div
+                class="flex items-center justify-between mt-4 pt-4 border-t border-gray-100"
+              >
+                <span class="text-xs text-gray-400">1 minggu lalu</span>
+                <i class="fab fa-google text-blue-500"></i>
+              </div>
+            </div>
+
+            <!-- Duplicate testimonials for seamless loop -->
+            <div class="testimonial-card">
+              <div class="flex items-center mb-4">
+                <div
+                  class="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center mr-4"
+                >
+                  <span class="text-white font-bold">AS</span>
+                </div>
+                <div>
+                  <h4 class="font-bold text-gray-800">Andi Setiawan</h4>
+                  <p class="text-gray-500 text-sm">Owner UMKM Berkah</p>
+                </div>
+              </div>
+              <div class="flex mb-3">
+                <i class="fas fa-star stars"></i>
+                <i class="fas fa-star stars"></i>
+                <i class="fas fa-star stars"></i>
+                <i class="fas fa-star stars"></i>
+                <i class="fas fa-star stars"></i>
+              </div>
+              <p class="text-gray-600 text-sm leading-relaxed">
+                "Everru.Studio bantuin aku bikin website UMKM-ku, cepet banget
+                dan hasilnya keren! Sekarang penjualan online naik 300%. Highly
+                recommended!"
+              </p>
+              <div
+                class="flex items-center justify-between mt-4 pt-4 border-t border-gray-100"
+              >
+                <span class="text-xs text-gray-400">2 minggu lalu</span>
+                <i class="fab fa-google text-blue-500"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review Form -->
+        <div class="max-w-2xl mx-auto mt-16">
+          <div
+            class="bg-white rounded-2xl shadow-lg border border-gray-100 p-8"
+          >
+            <h3 class="text-2xl font-bold text-center gradient-text mb-6">
+              Tinggalkan Ulasan
+            </h3>
+            <form class="space-y-6">
+              <div>
+                <input
+                  type="text"
+                  placeholder="Nama Lengkap"
+                  class="w-full border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                />
+              </div>
+              <div>
+                <div class="flex gap-2 mb-4">
+                  <i
+                    class="fas fa-star text-gray-300 hover:text-yellow-400 cursor-pointer text-xl"
+                  ></i>
+                  <i
+                    class="fas fa-star text-gray-300 hover:text-yellow-400 cursor-pointer text-xl"
+                  ></i>
+                  <i
+                    class="fas fa-star text-gray-300 hover:text-yellow-400 cursor-pointer text-xl"
+                  ></i>
+                  <i
+                    class="fas fa-star text-gray-300 hover:text-yellow-400 cursor-pointer text-xl"
+                  ></i>
+                  <i
+                    class="fas fa-star text-gray-300 hover:text-yellow-400 cursor-pointer text-xl"
+                  ></i>
+                </div>
+              </div>
+              <div>
+                <textarea
+                  placeholder="Bagikan pengalaman Anda menggunakan layanan kami..."
+                  rows="4"
+                  class="w-full border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent resize-none"
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                class="w-full bg-gradient-to-r from-indigo-500 to-purple-600 text-white font-bold py-3 rounded-xl hover:from-indigo-600 hover:to-purple-700 transition-all duration-300"
+              >
+                <i class="fas fa-paper-plane mr-2"></i>
+                Kirim Ulasan
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section
+      id="kontak"
+      class="py-20 bg-gradient-to-br from-gray-50 to-gray-100"
+    >
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold gradient-text mb-4">📞 Kontak</h2>
+          <p class="text-gray-600 text-lg">
+            Hubungi kami untuk konsultasi gratis
+          </p>
+        </div>
+
+        <div class="max-w-4xl mx-auto">
+          <div class="bg-white rounded-3xl shadow-2xl overflow-hidden">
+            <div class="grid grid-cols-1 lg:grid-cols-2">
+              <div class="p-8 lg:p-12">
+                <div class="text-center mb-8">
+                  <div
+                    class="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-to-r from-indigo-500 to-purple-600 flex items-center justify-center"
+                  >
+                    <i class="fas fa-user text-white text-4xl"></i>
+                  </div>
+                  <h3 class="text-2xl font-bold text-gray-800 mb-2">
+                    Evelly Khanzania Putri
+                  </h3>
+                  <p class="text-gray-600 mb-6">
+                    Founder & Developer di Everru.Studio
+                  </p>
+                </div>
+
+                <div class="space-y-4">
+                  <div
+                    class="flex items-center gap-4 p-4 bg-gray-50 rounded-xl"
+                  >
+                    <div
+                      class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center"
+                    >
+                      <i class="fab fa-whatsapp text-white"></i>
+                    </div>
+                    <div>
+                      <p class="font-semibold text-gray-800">WhatsApp</p>
+                      <a
+                        href="https://wa.me/6281234567890"
+                        class="text-indigo-600 hover:text-indigo-800"
+                        >+62 882 1217 5461</a
+                      >
+                    </div>
+                  </div>
+
+                  <!-- <div class="space-y-4">
+                    <div
+                      class="flex items-center gap-4 p-4 bg-gray-50 rounded-xl"
+                    >
+                      <div
+                        class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center"
+                      >
+                      <i class="fa-brands fa-linkedin"></i>
+                      </div>
+                      <div>
+                        <p class="font-semibold text-gray-800">LinkedIn</p>
+                        <a
+                          href="https://www.linkedin.com/in/evelly-khanzania-putri/"
+                          class="text-indigo-600 hover:text-indigo-800"
+                          >evelly khanzania putri</a
+                        >
+                      </div>
+                    </div> -->
+
+                  <div
+                    class="flex items-center gap-4 p-4 bg-gray-50 rounded-xl"
+                  >
+                    <div
+                      class="w-10 h-10 bg-red-500 rounded-full flex items-center justify-center"
+                    >
+                      <i class="fas fa-envelope text-white"></i>
+                    </div>
+                    <div>
+                      <p class="font-semibold text-gray-800">Email</p>
+                      <p class="text-indigo-600">evellykhnz@gmail.com</p>
+                    </div>
+                  </div>
+
+                  <div
+                    class="flex items-center gap-4 p-4 bg-gray-50 rounded-xl"
+                  >
+                    <div
+                      class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center"
+                    >
+                      <i class="fas fa-map-marker-alt text-white"></i>
+                    </div>
+                    <div>
+                      <p class="font-semibold text-gray-800">Lokasi</p>
+                      <p class="text-gray-600">Jakarta, Indonesia</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="bg-gradient-to-br from-indigo-500 to-purple-600 p-8 lg:p-12 text-white"
+              >
+                <h3 class="text-2xl font-bold mb-6">Mulai Project Anda</h3>
+                <form class="space-y-4">
+                  <div>
+                    <input
+                      type="text"
+                      placeholder="Nama Anda"
+                      class="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50"
+                    />
+                  </div>
+                  <div>
+                    <input
+                      type="email"
+                      placeholder="Email Anda"
+                      class="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50"
+                    />
+                  </div>
+                  <div>
+                    <select
+                      class="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-white/50"
+                    >
+                      <option value="" class="text-gray-800">
+                        Pilih Layanan
+                      </option>
+                      <option value="website" class="text-gray-800">
+                        Website Development
+                      </option>
+                      <option value="design" class="text-gray-800">
+                        UI/UX Design
+                      </option>
+                      <option value="document" class="text-gray-800">
+                        Dokumen Digital
+                      </option>
+                      <option value="spmb" class="text-gray-800">
+                        Layanan SPMB
+                      </option>
+                    </select>
+                  </div>
+                  <div>
+                    <textarea
+                      placeholder="Ceritakan project Anda..."
+                      rows="4"
+                      class="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50 resize-none"
+                    ></textarea>
+                  </div>
+                  <button
+                    type="submit"
+                    class="w-full bg-white text-indigo-600 font-bold py-3 rounded-xl hover:bg-gray-100 transition-colors"
+                  >
+                    <i class="fas fa-rocket mr-2"></i>
+                    Mulai Project
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+          <div>
+            <div class="flex items-center space-x-3 mb-4">
+              <div
+                class="w-10 h-10 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full flex items-center justify-center"
+              >
+                <i class="fas fa-code text-white"></i>
+              </div>
+              <span class="text-xl font-bold">Everru.Studio</span>
+            </div>
+            <p class="text-gray-400 text-sm">
+              Solusi digital terlengkap untuk kebutuhan bisnis dan personal
+              Anda.
+            </p>
+          </div>
+
+          <div>
+            <h4 class="font-bold mb-4">Layanan</h4>
+            <ul class="space-y-2 text-gray-400 text-sm">
+              <li>
+                <a href="#" class="hover:text-white transition-colors"
+                  >Website Development</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition-colors"
+                  >UI/UX Design</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition-colors"
+                  >Dokumen Digital</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition-colors"
+                  >Layanan SPMB</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-bold mb-4">Perusahaan</h4>
+            <ul class="space-y-2 text-gray-400 text-sm">
+              <li>
+                <a href="#" class="hover:text-white transition-colors"
+                  >Tentang Kami</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition-colors"
+                  >Portfolio</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition-colors"
+                  >Testimoni</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition-colors"
+                  >Kontak</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-bold mb-4">Ikuti Kami</h4>
+            <div class="flex space-x-4">
+              <a
+                href="#"
+                class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-indigo-600 transition-colors"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors"
+              >
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-800 transition-colors"
+              >
+                <i class="fab fa-linkedin"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="border-t border-gray-800 pt-8 text-center">
+          <p class="text-gray-400 text-sm">
+            &copy; 2025 Everru.Studio | Dibuat dengan ❤️ oleh Evelly Khanzania
+            Putri
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a
+      href="https://wa.me/6288212175461"
+      class="fixed bottom-6 right-6 w-14 h-14 bg-green-500 rounded-full flex items-center justify-center shadow-2xl hover:bg-green-600 transition-all duration-300 hover:scale-110 z-50"
+    >
+      <i class="fab fa-whatsapp text-white text-2xl"></i>
+    </a>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
