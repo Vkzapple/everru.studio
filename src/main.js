@@ -1,8 +1,6 @@
 import "./style.css";
 
-// Smooth scrolling for navigation links
 document.addEventListener("DOMContentLoaded", function () {
-  // Smooth scroll for navigation links
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
       e.preventDefault();
@@ -15,8 +13,6 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   });
-
-  // Star rating functionality
   const stars = document.querySelectorAll(".fa-star");
   stars.forEach((star, index) => {
     star.addEventListener("click", function () {
@@ -31,8 +27,6 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
   });
-
-  // Add scroll effect to navbar
   window.addEventListener("scroll", function () {
     const navbar = document.querySelector("nav");
     if (navbar) {
@@ -45,8 +39,6 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
   });
-
-  // Form submissions
   const forms = document.querySelectorAll("form");
   forms.forEach((form) => {
     form.addEventListener("submit", function (e) {
@@ -56,8 +48,6 @@ document.addEventListener("DOMContentLoaded", function () {
       );
     });
   });
-
-  // Add intersection observer for animations
   const observerOptions = {
     threshold: 0.1,
     rootMargin: "0px 0px -50px 0px",
@@ -72,7 +62,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }, observerOptions);
 
-  // Observe all sections
   document.querySelectorAll("section").forEach((section) => {
     section.style.opacity = "0";
     section.style.transform = "translateY(30px)";
@@ -80,11 +69,9 @@ document.addEventListener("DOMContentLoaded", function () {
     observer.observe(section);
   });
 
-  // Mobile menu toggle (if needed)
   const mobileMenuButton = document.querySelector(".md\\:hidden button");
   if (mobileMenuButton) {
     mobileMenuButton.addEventListener("click", function () {
-      // Add mobile menu functionality here if needed
       console.log("Mobile menu clicked");
     });
   }
