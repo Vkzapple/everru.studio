@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 const GOOGLE_APPS_SCRIPT_URL =
-  "https://script.google.com/macros/s/AKfycbynz6OxL-NoutG1h77pTTcXqCBS8iJIPlWTWcTKRCwVdMHDPLOFy7bIPiq-vQXj3zU/exec";
+  "https://script.google.com/macros/s/AKfycbxFcN-mQWLj34522iRYi82DlAJjd-cFWMezZitzQvvDzU2rhgbTac8Zcm5N_cn3mWTv/exec";
 
 // ===== Kontak Form =====
 const kontakForm = document.querySelector("#kontak form");
