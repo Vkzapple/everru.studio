@@ -89,37 +89,50 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-const GOOGLE_APPS_SCRIPT_URL =
-  "https://script.google.com/macros/s/AKfycbxFcN-mQWLj34522iRYi82DlAJjd-cFWMezZitzQvvDzU2rhgbTac8Zcm5N_cn3mWTv/exec";
+const API_URL = "./api/submit";
 
 // ===== Kontak Form =====
-document
-  .querySelector("#kontak form")
-  ?.addEventListener("submit", async function (e) {
+const kontakForm = document.querySelector("#kontak form");
+
+if (kontakForm) {
+  kontakForm.addEventListener("submit", async function (e) {
     e.preventDefault();
+
+    const nama = kontakForm.querySelector(
+      'input[placeholder="Nama Anda"]'
+    ).value;
+    const email = kontakForm.querySelector(
+      'input[placeholder="Email Anda"]'
+    ).value;
+    const layanan = kontakForm.querySelector("select").value;
+    const pesan = kontakForm.querySelector("textarea").value;
 
     const formData = {
       type: "kontak",
-      nama: this.querySelector('input[placeholder="Nama Anda"]').value,
-      email: this.querySelector('input[placeholder="Email Anda"]').value,
-      layanan: this.querySelector("select").value,
-      pesan: this.querySelector("textarea").value,
+      nama,
+      email,
+      layanan,
+      pesan,
     };
 
     try {
-      await fetch(GOOGLE_APPS_SCRIPT_URL, {
+      const res = await fetch("/api/submit", {
         method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
         body: JSON.stringify(formData),
-        headers: { "Content-Type": "application/json" },
       });
 
+      const result = await res.json();
       alert("✅ Pesanmu sudah terkirim!");
-      this.reset();
+      kontakForm.reset();
     } catch (error) {
-      alert("❌ Gagal mengirim. Coba lagi.");
-      console.error(error);
+      console.error("Gagal mengirim form:", error);
+      alert("❌ Gagal mengirim pesan.");
     }
   });
+}
 
 // ===== Ulasan Form =====
 document
@@ -135,7 +148,7 @@ document
     };
 
     try {
-      await fetch(GOOGLE_APPS_SCRIPT_URL, {
+      await fetch("/api/submit", {
         method: "POST",
         body: JSON.stringify(formData),
         headers: { "Content-Type": "application/json" },
