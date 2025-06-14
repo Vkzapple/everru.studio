@@ -98,46 +98,30 @@ document
   ?.addEventListener("submit", async function (e) {
     e.preventDefault();
 
+    const token = document.querySelector("#g-recaptcha-response")?.value;
+
+    if (!token) {
+      alert("❌ Mohon centang reCAPTCHA sebelum mengirim.");
+      return;
+    }
+
     const formData = {
       type: "kontak",
       nama: this.querySelector('input[placeholder="Nama Anda"]').value,
       email: this.querySelector('input[placeholder="Email Anda"]').value,
       layanan: this.querySelector("select").value,
       pesan: this.querySelector("textarea").value,
+      "g-recaptcha-response": token,
     };
 
-    if (typeof grecaptcha !== "undefined") {
-      grecaptcha.ready(() => {
-        grecaptcha
-          .execute("6LdwjGArAAAAAEaLhAbiLLM0YpRVsaFfFfPVPsV8", {
-            action: "submit",
-          })
-          .then((token) => {
-            formData["g-recaptcha-response"] = token;
+    await fetch(GOOGLE_APPS_SCRIPT_URL, {
+      method: "POST",
+      body: JSON.stringify(formData),
+      headers: { "Content-Type": "application/json" },
+    });
 
-            fetch(GOOGLE_APPS_SCRIPT_URL, {
-              method: "POST",
-              body: JSON.stringify(formData),
-              headers: { "Content-Type": "application/json" },
-            }).then(() => {
-              alert("✅ Pesanmu sudah terkirim!");
-              e.target.reset();
-            });
-          });
-      });
-    } else {
-      console.warn("⚠️ reCAPTCHA belum dimuat. Kirim tanpa token.");
-      formData["g-recaptcha-response"] = "dummy_token";
-
-      await fetch(GOOGLE_APPS_SCRIPT_URL, {
-        method: "POST",
-        body: JSON.stringify(formData),
-        headers: { "Content-Type": "application/json" },
-      });
-
-      alert("✅ Pesanmu sudah terkirim!");
-      this.reset();
-    }
+    alert("✅ Pesanmu sudah terkirim!");
+    this.reset();
   });
 
 // ===== Ulasan Form =====
@@ -146,42 +130,27 @@ document
   ?.addEventListener("submit", async function (e) {
     e.preventDefault();
 
+    const token = document.querySelector("#g-recaptcha-response")?.value;
+
+    if (!token) {
+      alert("❌ Mohon centang reCAPTCHA sebelum mengirim.");
+      return;
+    }
+
     const formData = {
       type: "ulasan",
       nama: this.querySelector("input").value || "Anonim",
       rating: document.querySelectorAll(".fa-star.text-yellow-400").length,
       ulasan: this.querySelector("textarea").value || "-",
+      "g-recaptcha-response": token,
     };
 
-    if (typeof grecaptcha !== "undefined") {
-      grecaptcha.ready(() => {
-        grecaptcha
-          .execute("6LdwjGArAAAAAEaLhAbiLLM0YpRVsaFfFfPVPsV8", {
-            action: "submit",
-          })
-          .then((token) => {
-            formData["g-recaptcha-response"] = token;
+    await fetch(GOOGLE_APPS_SCRIPT_URL, {
+      method: "POST",
+      body: JSON.stringify(formData),
+      headers: { "Content-Type": "application/json" },
+    });
 
-            fetch(GOOGLE_APPS_SCRIPT_URL, {
-              method: "POST",
-              body: JSON.stringify(formData),
-              headers: { "Content-Type": "application/json" },
-            }).then(() => {
-              alert("✨ Ulasanmu berhasil dikirim!");
-              e.target.reset();
-            });
-          });
-      });
-    } else {
-      formData["g-recaptcha-response"] = "dummy_token";
-
-      await fetch(GOOGLE_APPS_SCRIPT_URL, {
-        method: "POST",
-        body: JSON.stringify(formData),
-        headers: { "Content-Type": "application/json" },
-      });
-
-      alert("✨ Ulasanmu berhasil dikirim!");
-      this.reset();
-    }
+    alert("✨ Ulasanmu berhasil dikirim!");
+    this.reset();
   });
