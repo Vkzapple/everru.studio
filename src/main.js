@@ -141,7 +141,7 @@ document
 
 grecaptcha.ready(function () {
   grecaptcha
-    .execute("YOUR_SITE_KEY_HERE", { action: "submit" })
+    .execute("6LdwjGArAAAAAEaLhAbiLLM0YpRVsaFfFfPVPsV8", { action: "submit" })
     .then(function (token) {
       formData["g-recaptcha-response"] = token;
 
