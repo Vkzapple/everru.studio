@@ -19,52 +19,76 @@
 
   <body class="scroll-smooth">
     <!-- Navbar -->
-    <nav class="fixed top-0 w-full z-50 glass-effect">
+    <nav class="fixed top-0 w-full z-50 glass-effect" id="navbar">
       <div class="max-w-7xl mx-auto px-6 py-4">
         <div class="flex items-center justify-between">
           <div class="flex items-center space-x-3">
             <div class="w-20 h-10 rounded-40 flex items-center justify-center">
               <img
-                src="/assets/logo.jpg"
+                src="https://via.placeholder.com/32x32/667eea/ffffff?text=E"
                 alt="logo-navbar"
                 class="w-8 h-8 rounded-full object-cover"
               />
             </div>
-            <span class="text-xl font-bold text-white">Everru.Studio</span>
+            <span class="text-xl font-bold text-white logo-text">Everru.Studio</span>
           </div>
           <div class="hidden md:flex space-x-8">
             <a
               href="#home"
-              class="text-white hover:text-indigo-300 transition-colors"
+              class="text-white hover:text-indigo-300 transition-colors nav-link"
               >Home</a
             >
             <a
               href="#layanan"
-              class="text-white hover:text-indigo-300 transition-colors"
+              class="text-white hover:text-indigo-300 transition-colors nav-link"
               >Layanan</a
             >
             <a
               href="#portofolio"
-              class="text-white hover:text-indigo-300 transition-colors"
+              class="text-white hover:text-indigo-300 transition-colors nav-link"
               >Portofolio</a
             >
             <a
               href="#testimoni"
-              class="text-white hover:text-indigo-300 transition-colors"
+              class="text-white hover:text-indigo-300 transition-colors nav-link"
               >Testimoni</a
             >
             <a
               href="#kontak"
-              class="text-white hover:text-indigo-300 transition-colors"
+              class="text-white hover:text-indigo-300 transition-colors nav-link"
               >Kontak</a
             >
           </div>
-          <button class="md:hidden text-white">
+          <button class="md:hidden text-white mobile-menu-btn" id="mobile-menu-btn">
             <i class="fas fa-bars text-xl"></i>
           </button>
         </div>
       </div>
     </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu"
+    class="fixed top-20 right-4 w-56 bg-white shadow-xl rounded-xl p-6 z-50 hidden transition-all duration-300">
+     <div class="p-6">
+        <div class="flex justify-between items-center mb-8">
+          <span class="text-xl font-bold text-gray-800">Menu</span>
+          <button id="close-mobile-menu" class="text-gray-600 hover:text-gray-800">
+            <i class="fas fa-times text-xl"></i>
+          </button>
+        </div>
+
+        <nav class="space-y-4">
+          <a href="#home" class="block text-gray-800 hover:text-indigo-600 transition-colors mobile-nav-link">Home</a>
+          <a href="#layanan" class="block text-gray-800 hover:text-indigo-600 transition-colors mobile-nav-link">Layanan</a>
+          <a href="#portofolio" class="block text-gray-800 hover:text-indigo-600 transition-colors mobile-nav-link">Portofolio</a>
+          <a href="#testimoni" class="block text-gray-800 hover:text-indigo-600 transition-colors mobile-nav-link">Testimoni</a>
+          <a href="#kontak" class="block text-gray-800 hover:text-indigo-600 transition-colors mobile-nav-link">Kontak</a>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="fixed inset-0 bg-black bg-opacity-50 z-30 hidden" id="mobile-menu-overlay"></div>
 
     <!-- Hero Section -->
     <section
@@ -224,62 +248,44 @@
             Hasil karya terbaik dari berbagai project yang telah kami kerjakan
           </p>
         </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div
-            class="card-hover bg-white rounded-2xl overflow-hidden shadow-lg"
-          >
-            <div
-              class="h-48 bg-gradient-to-br from-blue-400 to-purple-500 flex items-center justify-center"
-            >
-              <img
-                src="/assets/logo.jpg"
-                alt="Website UMKM"
-                class="w-full h-full object-cover"
-              />
+    
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Item 1 -->
+          <div class="card-hover bg-white rounded-2xl overflow-hidden shadow-lg">
+            <div class="h-48 bg-gradient-to-br from-blue-400 to-purple-500 flex items-center justify-center">
+              <img src="/assets/logo.jpg" alt="Website UMKM" class="w-full h-full object-cover" />
             </div>
             <div class="p-6">
               <h3 class="font-bold text-lg mb-2">E-commerce UMKM</h3>
-              <p class="text-gray-600 text-sm">
-                Website toko online dengan fitur lengkap dan payment gateway
-              </p>
+              <p class="text-gray-600 text-sm">Website toko online dengan fitur lengkap dan payment gateway</p>
             </div>
           </div>
-
-          <div
-            class="card-hover bg-white rounded-2xl overflow-hidden shadow-lg"
-          >
-            <div
-              class="h-48 bg-gradient-to-br from-green-400 to-blue-500 flex items-center justify-center"
-            >
-              <i class="fas fa-mobile-alt text-white text-4xl"></i>
+    
+          <!-- Item 2 -->
+          <div class="card-hover bg-white rounded-2xl overflow-hidden shadow-lg">
+            <div class="h-48 bg-gradient-to-br from-blue-400 to-purple-500 flex items-center justify-center">
+              <img src="/assets/logo.jpg" alt="Website UMKM" class="w-full h-full object-cover" />
             </div>
             <div class="p-6">
-              <h3 class="font-bold text-lg mb-2">Mobile UI Design</h3>
-              <p class="text-gray-600 text-sm">
-                Desain aplikasi mobile yang user-friendly dan modern
-              </p>
+              <h3 class="font-bold text-lg mb-2">Company Profile</h3>
+              <p class="text-gray-600 text-sm">Website profesional untuk bisnis dan branding usaha Anda</p>
             </div>
           </div>
-
-          <div
-            class="card-hover bg-white rounded-2xl overflow-hidden shadow-lg"
-          >
-            <div
-              class="h-48 bg-gradient-to-br from-purple-400 to-pink-500 flex items-center justify-center"
-            >
-              <i class="fas fa-file-alt text-white text-4xl"></i>
+    
+          <!-- Item 3 -->
+          <div class="card-hover bg-white rounded-2xl overflow-hidden shadow-lg">
+            <div class="h-48 bg-gradient-to-br from-blue-400 to-purple-500 flex items-center justify-center">
+              <img src="/assets/logo.jpg" alt="Website UMKM" class="w-full h-full object-cover" />
             </div>
             <div class="p-6">
-              <h3 class="font-bold text-lg mb-2">Corporate Documents</h3>
-              <p class="text-gray-600 text-sm">
-                Dokumen bisnis profesional dengan desain yang elegan
-              </p>
+              <h3 class="font-bold text-lg mb-2">WordPress CMS</h3>
+              <p class="text-gray-600 text-sm">Solusi cepat dengan WordPress dan desain profesional</p>
             </div>
           </div>
         </div>
       </div>
     </section>
+    
 
     <!-- Testimonials Section -->
     <section id="testimoni" class="py-20 bg-white overflow-hidden">
@@ -465,7 +471,7 @@
             <h3 class="text-2xl font-bold text-center gradient-text mb-6">
               Tinggalkan Ulasan
             </h3>
-            <form class="space-y-6">
+            <form class="space-y-6" id="review-form">
               <div>
                 <input
                   type="text"
@@ -476,19 +482,24 @@
               <div>
                 <div class="flex gap-2 mb-4">
                   <i
-                    class="fas fa-star text-gray-300 hover:text-yellow-400 cursor-pointer text-xl"
+                    class="fas fa-star text-gray-300 hover:text-yellow-400 cursor-pointer text-xl rating-star"
+                    data-rating="1"
                   ></i>
                   <i
-                    class="fas fa-star text-gray-300 hover:text-yellow-400 cursor-pointer text-xl"
+                    class="fas fa-star text-gray-300 hover:text-yellow-400 cursor-pointer text-xl rating-star"
+                    data-rating="2"
                   ></i>
                   <i
-                    class="fas fa-star text-gray-300 hover:text-yellow-400 cursor-pointer text-xl"
+                    class="fas fa-star text-gray-300 hover:text-yellow-400 cursor-pointer text-xl rating-star"
+                    data-rating="3"
                   ></i>
                   <i
-                    class="fas fa-star text-gray-300 hover:text-yellow-400 cursor-pointer text-xl"
+                    class="fas fa-star text-gray-300 hover:text-yellow-400 cursor-pointer text-xl rating-star"
+                    data-rating="4"
                   ></i>
                   <i
-                    class="fas fa-star text-gray-300 hover:text-yellow-400 cursor-pointer text-xl"
+                    class="fas fa-star text-gray-300 hover:text-yellow-400 cursor-pointer text-xl rating-star"
+                    data-rating="5"
                   ></i>
                 </div>
               </div>
@@ -662,6 +673,7 @@
                       class="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50 resize-none"
                     ></textarea>
                   </div>
+                  <div class="g-recaptcha" data-sitekey="6LdwjGArAAAAAEaLhAbiLLM0YpRVsaFfFfPVPsV8"></div>
                   <button
                     type="submit"
                     class="w-full bg-white text-indigo-600 font-bold py-3 rounded-xl hover:bg-gray-100 transition-colors"
@@ -792,5 +804,6 @@
     </a>
 
     <script type="module" src="/src/main.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   </body>
 </html>

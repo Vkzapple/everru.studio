@@ -28,17 +28,16 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
   window.addEventListener("scroll", function () {
-    const navbar = document.querySelector("nav");
-    if (navbar) {
-      if (window.scrollY > 100) {
-        navbar.style.background = "rgba(255, 255, 255, 0.95)";
-        navbar.style.backdropFilter = "blur(20px)";
-      } else {
-        navbar.style.background = "rgba(255, 255, 255, 0.1)";
-        navbar.style.backdropFilter = "blur(10px)";
-      }
+    const navbar = document.getElementById("navbar");
+    if (!navbar) return;
+
+    if (window.scrollY > 50) {
+      navbar.classList.add("scrolled");
+    } else {
+      navbar.classList.remove("scrolled");
     }
   });
+
   const forms = document.querySelectorAll("form");
   forms.forEach((form) => {
     form.addEventListener("submit", function (e) {
@@ -69,10 +68,89 @@ document.addEventListener("DOMContentLoaded", function () {
     observer.observe(section);
   });
 
-  const mobileMenuButton = document.querySelector(".md\\:hidden button");
-  if (mobileMenuButton) {
-    mobileMenuButton.addEventListener("click", function () {
-      console.log("Mobile menu clicked");
+  const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+  const closeMobileMenuBtn = document.getElementById("close-mobile-menu");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const mobileMenuOverlay = document.getElementById("mobile-menu-overlay");
+
+  mobileMenuBtn.addEventListener("click", () => {
+    mobileMenu.classList.add("show");
+    mobileMenuOverlay.classList.remove("hidden");
+  });
+
+  closeMobileMenuBtn.addEventListener("click", () => {
+    mobileMenu.classList.remove("show");
+    mobileMenuOverlay.classList.add("hidden");
+  });
+
+  mobileMenuOverlay.addEventListener("click", () => {
+    mobileMenu.classList.remove("show");
+    mobileMenuOverlay.classList.add("hidden");
+  });
+});
+
+const GOOGLE_APPS_SCRIPT_URL =
+  "https://script.google.com/macros/s/AKfycbynz6OxL-NoutG1h77pTTcXqCBS8iJIPlWTWcTKRCwVdMHDPLOFy7bIPiq-vQXj3zU/exec";
+
+// Kontak Form
+document
+  .querySelector("#kontak form")
+  ?.addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    const formData = {
+      type: "kontak",
+      nama: this.querySelector('input[placeholder="Nama Anda"]').value,
+      email: this.querySelector('input[placeholder="Email Anda"]').value,
+      layanan: this.querySelector("select").value,
+      pesan: this.querySelector("textarea").value,
+    };
+
+    await fetch(GOOGLE_APPS_SCRIPT_URL, {
+      method: "POST",
+      body: JSON.stringify(formData),
+      headers: { "Content-Type": "application/json" },
     });
-  }
+
+    alert("✅ Pesanmu sudah terkirim!");
+    this.reset();
+  });
+
+// Ulasan Form
+document
+  .querySelector("#review-form")
+  ?.addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    const formData = {
+      type: "ulasan",
+      nama: this.querySelector("input").value || "Anonim",
+      rating: document.querySelectorAll(".fa-star.text-yellow-400").length,
+      ulasan: this.querySelector("textarea").value || "-",
+    };
+
+    await fetch(GOOGLE_APPS_SCRIPT_URL, {
+      method: "POST",
+      body: JSON.stringify(formData),
+      headers: { "Content-Type": "application/json" },
+    });
+
+    alert("✨ Ulasanmu berhasil dikirim!");
+    this.reset();
+  });
+
+grecaptcha.ready(function () {
+  grecaptcha
+    .execute("YOUR_SITE_KEY_HERE", { action: "submit" })
+    .then(function (token) {
+      formData["g-recaptcha-response"] = token;
+
+      fetch(GOOGLE_APPS_SCRIPT_URL, {
+        method: "POST",
+        body: JSON.stringify(formData),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+    });
 });
