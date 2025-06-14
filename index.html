@@ -472,8 +472,11 @@
               Tinggalkan Ulasan
             </h3>
             <form class="space-y-6" id="review-form">
-              <div id="recaptcha-ulasan" class="g-recaptcha" data-sitekey="6LdwjGArAAAAAEaLhAbiLLM0YpRVsaFfFfPVPsV8"></div>
-              <div>
+              <div id="recaptcha-ulasan" class="g-recaptcha" 
+              data-sitekey="YOUR_NEW_SITE_KEY_HERE"
+              data-callback="onRecaptchaSuccess"
+              data-expired-callback="onRecaptchaExpired">
+         </div>              <div>
                 <input
                   type="text"
                   placeholder="Nama Lengkap"
@@ -674,8 +677,10 @@
                       class="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50 resize-none"
                     ></textarea>
                   </div>
-                  <div id="recaptcha-kontak" class="g-recaptcha" data-sitekey="6LdwjGArAAAAAEaLhAbiLLM0YpRVsaFfFfPVPsV8"></div>
-                  <button
+                  <div id="recaptcha-kontak" class="g-recaptcha" 
+                  data-sitekey="YOUR_NEW_SITE_KEY_HERE"
+                  data-callback="onRecaptchaSuccess"
+                  data-expired-callback="onRecaptchaExpired">                  <button
                     type="submit"
                     class="w-full bg-white text-indigo-600 font-bold py-3 rounded-xl hover:bg-gray-100 transition-colors"
                   >
@@ -805,6 +810,6 @@
     </a>
 
     <script type="module" src="/src/main.js"></script>
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="https://www.google.com/recaptcha/api.js?onload=onRecaptchaLoad&render=explicit" async defer></script>
   </body>
 </html>
