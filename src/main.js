@@ -92,7 +92,7 @@ document.addEventListener("DOMContentLoaded", function () {
 const GOOGLE_APPS_SCRIPT_URL =
   "https://script.google.com/macros/s/AKfycbynz6OxL-NoutG1h77pTTcXqCBS8iJIPlWTWcTKRCwVdMHDPLOFy7bIPiq-vQXj3zU/exec";
 
-// Kontak Form
+// ===== Kontak Form =====
 document
   .querySelector("#kontak form")
   ?.addEventListener("submit", async function (e) {
@@ -106,17 +106,41 @@ document
       pesan: this.querySelector("textarea").value,
     };
 
-    await fetch(GOOGLE_APPS_SCRIPT_URL, {
-      method: "POST",
-      body: JSON.stringify(formData),
-      headers: { "Content-Type": "application/json" },
-    });
+    if (typeof grecaptcha !== "undefined") {
+      grecaptcha.ready(() => {
+        grecaptcha
+          .execute("6LdwjGArAAAAAEaLhAbiLLM0YpRVsaFfFfPVPsV8", {
+            action: "submit",
+          })
+          .then((token) => {
+            formData["g-recaptcha-response"] = token;
 
-    alert("✅ Pesanmu sudah terkirim!");
-    this.reset();
+            fetch(GOOGLE_APPS_SCRIPT_URL, {
+              method: "POST",
+              body: JSON.stringify(formData),
+              headers: { "Content-Type": "application/json" },
+            }).then(() => {
+              alert("✅ Pesanmu sudah terkirim!");
+              e.target.reset();
+            });
+          });
+      });
+    } else {
+      console.warn("⚠️ reCAPTCHA belum dimuat. Kirim tanpa token.");
+      formData["g-recaptcha-response"] = "dummy_token";
+
+      await fetch(GOOGLE_APPS_SCRIPT_URL, {
+        method: "POST",
+        body: JSON.stringify(formData),
+        headers: { "Content-Type": "application/json" },
+      });
+
+      alert("✅ Pesanmu sudah terkirim!");
+      this.reset();
+    }
   });
 
-// Ulasan Form
+// ===== Ulasan Form =====
 document
   .querySelector("#review-form")
   ?.addEventListener("submit", async function (e) {
@@ -129,28 +153,35 @@ document
       ulasan: this.querySelector("textarea").value || "-",
     };
 
-    await fetch(GOOGLE_APPS_SCRIPT_URL, {
-      method: "POST",
-      body: JSON.stringify(formData),
-      headers: { "Content-Type": "application/json" },
-    });
+    if (typeof grecaptcha !== "undefined") {
+      grecaptcha.ready(() => {
+        grecaptcha
+          .execute("6LdwjGArAAAAAEaLhAbiLLM0YpRVsaFfFfPVPsV8", {
+            action: "submit",
+          })
+          .then((token) => {
+            formData["g-recaptcha-response"] = token;
 
-    alert("✨ Ulasanmu berhasil dikirim!");
-    this.reset();
-  });
+            fetch(GOOGLE_APPS_SCRIPT_URL, {
+              method: "POST",
+              body: JSON.stringify(formData),
+              headers: { "Content-Type": "application/json" },
+            }).then(() => {
+              alert("✨ Ulasanmu berhasil dikirim!");
+              e.target.reset();
+            });
+          });
+      });
+    } else {
+      formData["g-recaptcha-response"] = "dummy_token";
 
-grecaptcha.ready(function () {
-  grecaptcha
-    .execute("6LdwjGArAAAAAEaLhAbiLLM0YpRVsaFfFfPVPsV8", { action: "submit" })
-    .then(function (token) {
-      formData["g-recaptcha-response"] = token;
-
-      fetch(GOOGLE_APPS_SCRIPT_URL, {
+      await fetch(GOOGLE_APPS_SCRIPT_URL, {
         method: "POST",
         body: JSON.stringify(formData),
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
       });
-    });
-});
+
+      alert("✨ Ulasanmu berhasil dikirim!");
+      this.reset();
+    }
+  });
