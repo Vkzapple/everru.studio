@@ -89,7 +89,8 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-const API_URL = "./api/submit";
+// Ganti sesuai domain kamu saat produksi/deploy
+const API_URL = "/api/submit";
 
 // ===== Kontak Form =====
 const kontakForm = document.querySelector("#kontak form");
@@ -116,13 +117,18 @@ if (kontakForm) {
     };
 
     try {
-      const res = await fetch("/api/submit", {
+      const res = await fetch(API_URL, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
       });
+
+      if (!res.ok) {
+        const errorText = await res.text();
+        throw new Error(errorText || "Terjadi kesalahan server.");
+      }
 
       const result = await res.json();
       alert("✅ Pesanmu sudah terkirim!");
@@ -148,16 +154,22 @@ document
     };
 
     try {
-      await fetch("/api/submit", {
+      const res = await fetch(API_URL, {
         method: "POST",
-        body: JSON.stringify(formData),
         headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
       });
 
+      if (!res.ok) {
+        const errorText = await res.text();
+        throw new Error(errorText || "Terjadi kesalahan server.");
+      }
+
+      const result = await res.json();
       alert("✨ Ulasanmu berhasil dikirim!");
       this.reset();
     } catch (error) {
+      console.error("Gagal mengirim ulasan:", error);
       alert("❌ Gagal mengirim ulasan.");
-      console.error(error);
     }
   });
